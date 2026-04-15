@@ -1,0 +1,2 @@
+minilab_navigation:minilab_simulation
+-DCATKIN_DEVEL_PREFIX=/home/phiet/fix_robo/devel -DCMAKE_INSTALL_PREFIX=/home/phiet/fix_robo/install -G Unix Makefiles
