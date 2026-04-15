@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<launch>
+  <arg name ="file_name" default="data.bag"/>
+<arg name ="dest_path" default="$(find minilab_navigation)"/>
+  <arg name ="minilab3" default="/minilab3/odom"/>
+  <arg name ="minilab1" default="/minilab1/odom"/> 
+  <arg name ="minilab2" default="/minilab2/odom"/>
+  <!--<arg name ="agent3" default="/agent3/odom"/>
+  <arg name ="agent4" default="/agent4/odom"/>-->
+  <node name ="recorder" pkg="rosbag" type="record" output="screen" args="-O $(arg dest_path)/$(arg file_name) $(arg minilab3) $(arg minilab1) $(arg minilab2) ">
+  </node>
+</launch>
