@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<launch>
+  <!-- No namespace here as we will share this description. 
+       Access with slash at the beginning -->
+  <param name="robot_description" textfile="$(find minilab_navigation)/urdf/minilab.urdf"/>
+    <!-- BEGIN ROBOT 1-->
+  <group ns="leader">
+    <param name="tf_prefix" value="leader_tf" />
+    <include file="$(find minilab_simulation)/launch/one_robot.launch" >
+      <arg name="init_pose" value="-x 2 -y 2 -z 0" />
+      <arg name="robot_name"  value="leader" />
+      <arg name="spawn_minilab_model"  value="leader_urdf" />
+    </include>
+  </group>
+
+  <!-- BEGIN ROBOT 2-->
+  <group ns="agent1">
+    <param name="tf_prefix" value="agent1_tf" />
+    <include file="$(find minilab_simulation)/launch/one_robot.launch" >
+      <arg name="init_pose" value="-x -1 -y -1 -z 0" />
+      <arg name="robot_name"  value="agent1" />
+      <arg name="spawn_minilab_model"  value="agent1_urdf" />
+    </include>
+  </group>
+
+  <!-- BEGIN ROBOT 3-->
+  <group ns="agent2">
+    <param name="tf_prefix" value="agent2_tf" />
+    <include file="$(find minilab_simulation)/launch/one_robot.launch" >
+      <arg name="init_pose" value="-x 2 -y 5 -z 0" />
+      <arg name="robot_name"  value="agent2" />
+      <arg name="spawn_minilab_model"  value="agent2_urdf" />
+    </include>
+  </group>
+
+</launch>
