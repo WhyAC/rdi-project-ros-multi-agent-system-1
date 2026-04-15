@@ -1,0 +1,8 @@
+prefix=/home/phiet/fix_robo/install
+
+Name: minilab_navigation
+Description: Description of minilab_navigation
+Version: 0.0.0
+Cflags: 
+Libs: -L/home/phiet/fix_robo/install/lib -lminilab_navigation
+Requires: roscpp rospy std_msgs
